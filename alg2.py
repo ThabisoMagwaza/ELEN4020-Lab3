@@ -36,7 +36,7 @@ class onesStepMatrixMult(MRJob):
 		for it in range(0,j):
 			listTupple.append(listM[it]*listN[it])
 		yield key , sum(listTupple)
-		print("reducer done")
+		#print("reducer done")
 
 if __name__ == '__main__':
 	
