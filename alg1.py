@@ -19,7 +19,9 @@ class onestepMatrixMult(MRJob):
 		matrixName = os.environ['map_input_file']
 		
 		#if matrixName == "Matrix1.txt":
-		if matrixName == "Matrix1.txt":
+		#if matrixName == "outA1.list":
+		if matrixName == "outA2.list":
+		#if matrixName == "outA3.list":
 			yield j, ('M',i,val)
 		else:
 			# j,k,val = i,j,val
@@ -41,11 +43,11 @@ class onestepMatrixMult(MRJob):
 			for elem2 in listN:
 				yield (int(elem1[0]),int(elem2[0])),(int(elem1[1])*int(elem2[1]))
 			
-		print("reducer1 done")
+		#print("reducer1 done")
 	
 	def second_reducer(self,key,values):
 		yield key,sum(values)
-	print("reducer done")
+	#print("reducer done")
 		
 if __name__ == '__main__':
 	start_time = time.time()
