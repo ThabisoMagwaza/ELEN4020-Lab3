@@ -14,7 +14,7 @@ class onesStepMatrixMult(MRJob):
 		row,col,val = value.split()
 		matrixName = os.environ['map_input_file']
 		
-		if matrixName == "Matrix1.txt":
+		if matrixName == "outA1.list":
 			for c in range(0,k):
 				yield (int(row),c),('M',int(col),int(val))
 		else:
@@ -40,8 +40,8 @@ class onesStepMatrixMult(MRJob):
 
 if __name__ == '__main__':
 	
-	matrix1 = open('Matrix1.txt','r')
-	matrix2 = open('Matrix2.txt','r')
+	matrix1 = open('outA1.list','r')
+	matrix2 = open('outB1.list','r')
 	
 	i,j_1 = matrix1.readline().split()
 	j_2,k = matrix2.readline().split()
