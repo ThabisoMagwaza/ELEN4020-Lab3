@@ -19,8 +19,8 @@ class onestepMatrixMult(MRJob):
 		matrixName = os.environ['map_input_file']
 		
 		#if matrixName == "Matrix1.txt":
-		#if matrixName == "outA1.list":
-		if matrixName == "outA2.list":
+		if matrixName == "outA1.list":
+		#if matrixName == "outA2.list":
 		#if matrixName == "outA3.list":
 			yield j, ('M',i,val)
 		else:
